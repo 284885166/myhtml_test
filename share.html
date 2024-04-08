@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分享测试</title>
+</head>
+
+<body>
+    <script>
+        if (navigator.share) {
+            navigator.share({
+                title: '分享的标题',
+                text: '分享的文本内容',
+                url: 'https://www.baidu.com'
+            }).then(() => {
+                console.log('分享成功。');
+            }).catch(err => {
+                console.error('分享失败:', err);
+            });
+        } else {
+            // 回退处理，比如显示自定义的分享界面
+            console.log('Web Share API 不可用');
+        }
+    </script>
+</body>
+
+</html>
